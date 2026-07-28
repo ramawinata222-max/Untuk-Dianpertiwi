@@ -1,0 +1,1102 @@
+/* ===========================================
+   GOOGLE FONT & BASIC RESET
+=========================================== */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    overflow-x:hidden;
+    background:linear-gradient(
+        180deg,
+        #ffd6e7 0%,
+        #ffe4ef 35%,
+        #fff2f8 100%
+    );
+    min-height:100vh;
+}
+
+/* ===========================================
+BACKGROUND DECORATION (SPARKLES/DOTS)
+=========================================== */
+body::before{
+    content:"";
+    position:fixed;
+    width:100%;
+    height:100%;
+    left:0;
+    top:0;
+    background:
+    radial-gradient(circle at 20% 20%,#ffffff90 0 8%,transparent 10%),
+    radial-gradient(circle at 70% 30%,#ffffff80 0 7%,transparent 9%),
+    radial-gradient(circle at 40% 80%,#ffffff60 0 8%,transparent 10%);
+    pointer-events:none;
+    z-index:-1;
+}
+
+/* ===========================================
+LOADING SCREEN
+=========================================== */
+#loading{
+    position:fixed;
+    width:100%;
+    height:100vh;
+    background:#ffd4e8;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    z-index:99999;
+    transition:.8s;
+}
+
+.loading-box{
+    background:white;
+    padding:40px;
+    border-radius:25px;
+    box-shadow:0 20px 40px rgba(0,0,0,.15);
+    text-align:center;
+    width:320px;
+}
+
+.loading-box h2{
+    margin-top:20px;
+    color:#ff5f9f;
+}
+
+.loading-box p{
+    margin-top:10px;
+    color:#666;
+}
+
+.loading-duck img {
+    width: 80px;
+    animation:duckJump 1.5s infinite;
+}
+
+@keyframes duckJump{
+    0%{ transform:translateY(0); }
+    50%{ transform:translateY(-18px); }
+    100%{ transform:translateY(0); }
+}
+
+/* ===========================================
+HEART CONTAINER
+=========================================== */
+#hearts{
+    position:fixed;
+    left:0;
+    top:0;
+    width:100%;
+    height:100%;
+    pointer-events:none;
+    overflow:hidden;
+    z-index:2;
+}
+
+/* ===========================================
+HERO PAGE (HALAMAN UTAMA BUKA HADIAH)
+=========================================== */
+.hero{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:20px;
+    position:relative;
+    z-index:10;
+}
+
+.glass{
+    width:700px;
+    max-width:95%;
+    padding:60px;
+    border-radius:35px;
+    background:rgba(255,255,255,.35);
+    backdrop-filter:blur(18px);
+    border:2px solid rgba(255,255,255,.6);
+    box-shadow: 0 15px 40px rgba(0,0,0,.12);
+    text-align:center;
+    animation:fadeUp 1.5s;
+}
+
+.glass h3{
+    color:#ff79af;
+    font-weight:500;
+    margin-bottom:20px;
+}
+
+.glass h1{
+    font-family:'Pacifico',cursive;
+    font-size:68px;
+    color:#ff4d94;
+    margin-bottom:10px;
+}
+
+#name{
+    font-size:38px;
+    margin-bottom:25px;
+    color:#ff6ba8;
+}
+
+.glass p{
+    line-height:2;
+    font-size:18px;
+    color:#555;
+    margin-bottom:40px;
+}
+
+/* ===========================================
+UNIVERSAL BUTTONS
+=========================================== */
+button{
+    margin-top:40px;
+    padding:18px 45px;
+    border:none;
+    border-radius:40px;
+    background:#ff5d96;
+    color:white;
+    font-size:18px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+button:hover{
+    transform:translateY(-6px);
+    background:#ff4f97;
+}
+
+button:active{
+    transform:scale(.95);
+}
+
+/* ===========================================
+GLOBAL UTILITY ANIMATION & HIDE CLASS
+=========================================== */
+@keyframes fadeUp{
+    from{ opacity:0; transform:translateY(40px); }
+    to{ opacity:1; transform:translateY(0); }
+}
+
+section{
+    padding:100px 20px;
+}
+
+/* Kelas penyembunyi halaman utama dari JavaScript */
+.hide{
+    display:none !important;
+}
+
+/* ===========================================
+LETTER PAGE (HALAMAN SURAT)
+=========================================== */
+#letter {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 15;
+}
+
+.letter-card{
+    max-width:850px;
+    width: 95%;
+    margin:auto;
+    padding:60px;
+    background:white;
+    border-radius:35px;
+    box-shadow:0 20px 50px rgba(0,0,0,.12);
+    text-align:center;
+    animation: fadeUp 1s ease-in-out;
+}
+
+.letter-card h1{
+    font-size:70px;
+    margin-bottom:15px;
+}
+
+.letter-card h2{
+    color:#ff5b9d;
+    margin-bottom:30px;
+}
+
+.letter-card p{
+    font-size:18px;
+    line-height:2.2;
+    color:#555;
+    white-space:pre-line;
+}
+
+/* ===========================================
+GALLERY PAGE & VIDEO OVERLAY LAYER
+=========================================== */
+#gallerypage {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 20;
+    background: none; /* Menghapus background pink bawaan agar video terlihat */
+}
+
+/* KUNCI PERBAIKAN UTAMA: Video dan Overlay disembunyikan secara total */
+.memory-video, .video-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.memory-video {
+    object-fit: cover;
+    z-index: 1; /* Di bawah konten galeri */
+}
+
+.video-overlay {
+    background: rgba(0, 0, 0, 0.45); /* Gelap estetik agar teks putih menonjol */
+    backdrop-filter: blur(2px);
+    z-index: 2; /* Di atas video, di bawah konten galeri */
+}
+
+/* CSS cerdas: Video dan overlay HANYA aktif jika #gallerypage SEDANG TERBUKA (tidak ada kelas .hide) */
+#gallerypage:not(.hide) .memory-video,
+#gallerypage:not(.hide) .video-overlay {
+    display: block;
+}
+
+/* CONTAINER ISI GALERI */
+.gallery-content {
+    position: relative;
+    z-index: 5; /* Lapisan paling atas menimpa video */
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    padding: 60px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.gallery-content h1 {
+    font-size: 50px;
+    color: #ffffff; /* Berubah jadi putih kontras */
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.6);
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.gallery-content p {
+    max-width: 700px;
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 16px;
+    color: #ffffff;
+    text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.7);
+}
+
+/* SUSUNAN GRID 5 KESAMPING */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 15px;
+    width: 100%;
+    margin-bottom: 40px;
+}
+
+/* CONTAINER FRAME FOTO */
+.photo {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    cursor: pointer;
+}
+
+.photo:hover {
+    transform: translateY(-8px) scale(1.05);
+}
+
+.photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+.photo:hover img {
+    transform: scale(1.08);
+}
+
+/* ===========================================
+PHOTO PREVIEW MODAL
+=========================================== */
+.photo-modal{
+    position:fixed;
+    inset:0;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:rgba(0,0,0,.85);
+    opacity:0;
+    visibility:hidden;
+    transition:.4s;
+    z-index:9999;
+}
+
+.photo-modal.show{
+    opacity:1;
+    visibility:visible;
+}
+
+.photo-modal img{
+    max-width:85%;
+    max-height:85vh;
+    border-radius:20px;
+    box-shadow:0 20px 60px rgba(0,0,0,.5);
+}
+
+#closePhoto{
+    position:absolute;
+    top:30px;
+    right:40px;
+    font-size:45px;
+    color:white;
+    cursor:pointer;
+}
+
+/* =====================================================
+   WISH SECTION
+===================================================== */
+#wish{
+    text-align:center;
+    padding:100px 20px;
+    min-height: 100vh;
+}
+
+#wish h2{
+    font-size:42px;
+    color:#ff5b9d;
+    margin-bottom:25px;
+}
+
+#wish p{
+    max-width:800px;
+    margin:auto;
+    line-height:2;
+    font-size:18px;
+    color:#555;
+    margin-bottom:45px;
+}
+
+/* =====================================================
+   QUESTION PAGE (MAU TETAP JADI PACARKU)
+===================================================== */
+#question {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.question-box{
+    width:700px;
+    max-width:95%;
+    margin:auto;
+    background:#fff;
+    padding:60px;
+    border-radius:35px;
+    text-align:center;
+    box-shadow:0 20px 45px rgba(0,0,0,.12);
+    position:relative;
+}
+
+.question-box h2{
+    color:#ff5b9d;
+    margin-bottom:45px;
+}
+
+.buttons{
+    display:flex;
+    justify-content:center;
+    gap:25px;
+    position:relative;
+}
+
+#yes{
+    background:#ff5b9d;
+    margin-top: 0;
+}
+
+#no{
+    background:#ccc;
+    color:#444;
+    position:relative;
+    transition:.25s;
+    margin-top: 0;
+}
+
+/* =====================================================
+   SUCCESS PAGE
+===================================================== */
+#success{
+    text-align:center;
+    padding:120px 20px;
+    min-height: 100vh;
+}
+
+#success h1{
+    font-family:'Pacifico',cursive;
+    color:#ff4d94;
+    font-size:65px;
+    margin-bottom:25px;
+}
+
+#success h2{
+    color:#ff79af;
+    margin-bottom:30px;
+}
+
+#success p{
+    max-width:700px;
+    margin:auto;
+    line-height:2;
+    font-size:18px;
+    color:#555;
+}
+
+/* =====================================================
+   FLOATING HEART & SPARKLES
+===================================================== */
+.heart{
+    position:fixed;
+    bottom:-30px;
+    color:#ff69b4;
+    animation:heartFly linear forwards;
+    pointer-events:none;
+    z-index:5;
+}
+
+@keyframes heartFly{
+    from{ transform:translateY(0) scale(.8); opacity:1; }
+    to{ transform:translateY(-120vh) scale(1.5); opacity:0; }
+}
+
+.sparkle{
+    position:fixed;
+    color:#fff;
+    animation:spark 3s linear infinite;
+    opacity:.8;
+}
+
+@keyframes spark{
+    0%{ transform:scale(.5); opacity:0; }
+    50%{ opacity:1; }
+    100%{ transform:scale(1.5); opacity:0; }
+}
+
+/* =====================================================
+   DECORATION IMAGES (DUCKS & TULIPS ANIMATION)
+===================================================== */
+
+/* 1. Pengaturan posisi bunga tulip di kiri dan kanan */
+.tulip-left, .tulip-right {
+    position: fixed; /* Menggunakan fixed agar tetap di posisinya saat halaman aktif */
+    bottom: 20px;
+    width: 120px;
+    z-index: 6;
+    pointer-events: none;
+    transform-origin: bottom center; /* Titik tumpu ayunan ada di bawah batang */
+    animation: tulipSway 4s ease-in-out infinite; /* Efek berayun */
+}
+
+.tulip-left { 
+    left: 30px; 
+    top: auto; /* Memastikan posisinya menetap di bawah */
+}
+
+.tulip-right { 
+    right: 30px; 
+    top: auto; 
+    animation-delay: -2s; /* Membuat ayunannya bergantian dengan yang kiri */
+}
+
+/* Animasi Bunga Tulip Berayun */
+@keyframes tulipSway {
+    0% { transform: rotate(-5deg); }
+    50% { transform: rotate(5deg); }
+    100% { transform: rotate(-5deg); }
+}
+
+
+/* 2. Pengaturan untuk kelompok bebek di halaman terakhir (#success) */
+.duck-group {
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.duck-group img {
+    width: 75px;
+    height: auto;
+    display: inline-block;
+    animation: duckDance 1.6s ease-in-out infinite;
+}
+
+/* Membuat bebek melompat bergantian (menggunakan delay) */
+.duck-group img:nth-child(1) { animation-delay: 0s; }
+.duck-group img:nth-child(2) { animation-delay: 0.3s; }
+.duck-group img:nth-child(3) { animation-delay: 0.6s; }
+.duck-group img:nth-child(4) { animation-delay: 0.9s; }
+.duck-group img:nth-child(5) { animation-delay: 1.2s; }
+
+/* Animasi Bebek Menari & Melompat */
+@keyframes duckDance {
+    0%, 100% { 
+        transform: translateY(0) rotate(0deg); 
+    }
+    30% { 
+        transform: translateY(-25px) rotate(-5deg) scaleX(1.05); /* Melompat ke atas */
+    }
+    50% {
+        transform: translateY(0) rotate(5deg);
+    }
+    70% {
+        transform: translateY(-5px) rotate(-3deg);
+    }
+}
+
+
+/* 3. BONUS EXTRA: Membuat Bebek Berjalan Menyeberangi Layar (Sangat Ramai!) */
+.gallery-duck {
+    position: fixed;
+    bottom: 15px;
+    left: -100px; /* Mulai dari luar layar sebelah kiri */
+    width: 70px;
+    z-index: 4;
+    pointer-events: none;
+    /* Bebek berjalan terus menerus dari kiri ke kanan */
+    animation: duckWalk 18s linear infinite, duckWaddle 0.6s ease-in-out infinite alternate;
+}
+
+/* Animasi berjalan menyeberang */
+@keyframes duckWalk {
+    0% { left: -100px; }
+    100% { left: 110%; }
+}
+
+/* Animasi jalan bergoyang (waddle) */
+@keyframes duckWaddle {
+    0% { transform: rotate(-6deg) translateY(0); }
+    100% { transform: rotate(6deg) translateY(-4px); }
+}
+/* =====================================================
+   RESPONSIVE DESIGN (HP)
+===================================================== */
+@media(max-width:768px){
+    .glass, .letter-card, .question-box{
+        padding:35px 25px;
+    }
+    .glass h1{ font-size:46px; }
+    #name{ font-size:28px; }
+    .glass p, .letter-card p, #wish p, #success p{ font-size:16px; }
+    button{ width:100%; }
+    .buttons{ flex-direction:column; gap: 15px; }
+    #success h1{ font-size:48px; }
+    
+    /* Grid foto di HP otomatis berganti menjadi 2 kesamping */
+    .gallery-grid{
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+    .gallery-content h1 { font-size: 34px; }
+}   
+/*==================================
+PASSWORD PAGE
+==================================*/
+
+.password-page{
+
+    position:fixed;
+    inset:0;
+
+    display:none;
+    justify-content:center;
+    align-items:center;
+
+    overflow:hidden;
+
+    background:
+    linear-gradient(135deg,#ffd6eb,#ffc4e3,#ffb4d9);
+
+    z-index:9999;
+
+}
+
+
+/* Background Blur */
+
+.password-page::before{
+
+    content:"";
+
+    position:absolute;
+    inset:0;
+
+    backdrop-filter:blur(8px);
+
+}
+
+
+/* Bubble Love */
+
+.password-page::after{
+
+    content:"💖 💕 🌸 💖 🌷 💕";
+
+    position:absolute;
+
+    width:100%;
+    height:100%;
+
+    font-size:35px;
+
+    opacity:.12;
+
+    animation:loveMove 15s linear infinite;
+
+}
+
+@keyframes loveMove{
+
+    from{
+
+        transform:translateY(50px);
+
+    }
+
+    to{
+
+        transform:translateY(-80px);
+
+    }
+
+}
+
+
+
+.password-box{
+
+    position:relative;
+
+    width:360px;
+
+    padding:35px;
+
+    border-radius:35px;
+
+    text-align:center;
+
+    background:rgba(255,255,255,.30);
+
+    backdrop-filter:blur(18px);
+
+    border:2px solid rgba(255,255,255,.5);
+
+    box-shadow:
+
+    0 20px 60px rgba(255,105,180,.25);
+
+}
+
+
+/* Judul */
+
+.password-box h2{
+
+    font-family:'Pacifico',cursive;
+
+    color:#ff3b8d;
+
+    font-size:34px;
+
+    margin-bottom:8px;
+
+}
+
+.password-box p.subtitle{
+
+    color:#666;
+
+    margin-bottom:30px;
+
+}
+
+
+
+/* Display */
+
+.password-display{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:10px;
+
+    margin-bottom:30px;
+
+}
+
+.password-display input{
+
+    width:48px;
+
+    height:48px;
+
+    border-radius:15px;
+
+    border:none;
+
+    background:white;
+
+    text-align:center;
+
+    font-size:25px;
+
+    font-weight:bold;
+
+    color:#ff4fa0;
+
+    box-shadow:
+
+    0 8px 20px rgba(255,105,180,.25);
+
+}
+
+
+
+/* Keypad */
+
+.keypad{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,85px);
+
+    gap:18px;
+
+    justify-content:center;
+
+}
+
+.keypad button{
+
+    width:85px;
+
+    height:85px;
+
+    border-radius:50%;
+
+    border:none;
+
+    cursor:pointer;
+
+    font-size:30px;
+
+    font-weight:bold;
+
+    color:#ff4f9d;
+
+    background:white;
+
+    transition:.3s;
+
+    box-shadow:
+
+    0 10px 20px rgba(255,105,180,.25);
+
+}
+
+.keypad button:hover{
+
+    transform:translateY(-6px) scale(1.08);
+
+    background:#ff4fa0;
+
+    color:white;
+
+    box-shadow:
+
+    0 0 30px rgba(255,105,180,.6);
+
+}
+
+
+
+/* Status */
+
+#passwordStatus{
+
+    margin-top:22px;
+
+    font-weight:bold;
+
+    color:#ff3b8d;
+
+}
+
+
+
+/* Animasi */
+
+.password-box{
+
+    animation:popup .7s ease;
+
+}
+
+@keyframes popup{
+
+    from{
+
+        opacity:0;
+
+        transform:scale(.8);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:scale(1);
+
+    }
+
+}.flower{
+
+    position:absolute;
+    width:130px;
+
+    animation:float 5s ease-in-out infinite;
+
+}
+
+.flower1{
+
+    top:20px;
+    left:20px;
+
+}
+
+.flower2{
+
+    right:20px;
+    bottom:20px;
+
+    transform:rotate(180deg);
+
+}
+
+.duck{
+
+    position:absolute;
+
+    width:90px;
+
+    animation:bounce 2s infinite;
+
+}
+
+.duck1{
+
+    left:70px;
+    bottom:40px;
+
+}
+
+.duck2{
+
+    right:70px;
+    top:60px;
+
+}
+
+.love{
+
+    position:absolute;
+
+    font-size:40px;
+
+    animation:loveFloat 4s ease-in-out infinite;
+
+}
+
+.love1{
+
+    top:120px;
+    left:180px;
+
+}
+
+.love2{
+
+    top:180px;
+    right:140px;
+
+}
+
+.love3{
+
+    bottom:180px;
+    left:140px;
+
+}
+
+.love4{
+
+    bottom:120px;
+    right:180px;
+
+}
+
+@keyframes float{
+
+    0%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(-15px);
+
+    }
+
+    100%{
+
+        transform:translateY(0);
+
+    }
+
+}
+
+@keyframes bounce{
+
+    0%,100%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(-12px);
+
+    }
+
+}
+
+@keyframes loveFloat{
+
+    0%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(-15px);
+
+    }
+
+    100%{
+
+        transform:translateY(0);
+
+    }
+
+}.flower,
+.duck,
+.love{
+
+    pointer-events:none;
+
+}
+
+.password-box{
+
+    position:relative;
+    z-index:10;
+
+}.password-page{
+
+    pointer-events:auto;
+
+}
+
+.password-page::before,
+.password-page::after{
+
+    pointer-events:none;
+
+}
+.keypad button{
+
+    width:85px;
+    height:85px;
+
+    border-radius:50%;
+
+    border:none;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    padding:0;
+
+    font-size:32px;
+    font-weight:700;
+    line-height:1;
+
+    color:#ff4f9d;
+
+    background:white;
+
+    cursor:pointer;
+
+    transition:.25s;
+
+    box-shadow:
+        0 8px 18px rgba(255,105,180,.25);
+
+}.keypad{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,85px);
+
+    justify-content:center;
+
+    gap:18px;
+
+    margin:auto;
+
+}

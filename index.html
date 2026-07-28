@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Happy Birthday Sayang 🤍</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Pacifico&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+
+</head>
+
+<body>
+
+<div id="loading">
+
+    <div class="loading-box">
+
+        <div class="loading-duck">
+            <img src="assets/images/duck1.png" alt="Duck">
+        </div>
+
+        <h2>Menyiapkan Kejutan...</h2>
+
+        <p>Tunggu sebentar ya Sayang 🤍</p>
+
+    </div>
+
+</div>
+
+<!-- =======================================
+    PASSWORD SCREEN
+======================================= -->
+
+<section id="passwordPage" class="password-page">
+    <img src="asset/tulip.png" class="flower flower1">
+<img src="asset/tulip.png" class="flower flower2">
+
+<img src="asset/duck.png" class="duck duck1">
+<img src="asset/duck.png" class="duck duck2">
+
+<div class="love love1">💖</div>
+<div class="love love2">💕</div>
+<div class="love love3">🌸</div>
+<div class="love love4">💗</div>
+
+    <div class="password-box">
+
+        <h2>💕 Hai Cantik 💕</h2>
+
+    <p class="subtitle">
+        Masukkan password untuk membuka kejutan spesial yaa 🌷
+    </p>
+        <div class="password-display">
+
+            <input type="password" maxlength="1" readonly>
+            <input type="password" maxlength="1" readonly>
+            <input type="password" maxlength="1" readonly>
+            <input type="password" maxlength="1" readonly>
+            <input type="password" maxlength="1" readonly>
+            <input type="password" maxlength="1" readonly>
+
+        </div>
+
+        <div class="keypad">
+
+            <button onclick="tekanAngka('1')">1</button>
+            <button onclick="tekanAngka('2')">2</button>
+            <button onclick="tekanAngka('3')">3</button>
+
+            <button onclick="tekanAngka('4')">4</button>
+            <button onclick="tekanAngka('5')">5</button>
+            <button onclick="tekanAngka('6')">6</button>
+
+            <button onclick="tekanAngka('7')">7</button>
+            <button onclick="tekanAngka('8')">8</button>
+            <button onclick="tekanAngka('9')">9</button>
+
+            <button onclick="hapusPassword()">⌫</button>
+            <button onclick="tekanAngka('0')">0</button>
+            <button onclick="resetPassword()">C</button>
+
+        </div>
+
+        <p id="passwordStatus"></p>
+
+    </div>
+
+</section>
+
+<div id="hearts"></div>
+
+
+<section class="hero" style="display:none;">
+
+    <div class="glass">
+
+        <h3>Untuk Seseorang Yang Sangat Berharga ❤️</h3>
+
+        <h1>Happy Birthday</h1>
+
+        <h2 id="name">Dian 🤍</h2>
+
+        <p>
+            Hari ini aku punya hadiah kecil untuk seseorang
+            yang paling spesial di hidupku.
+            Semoga kamu suka yaa 🤍🤍🤍
+        </p>
+
+        <button id="openLetter">
+            <i class="fa-solid fa-envelope-open"></i> Buka Hadiah
+        </button>
+
+    </div>
+
+</section>
+
+
+
+<section id="letter" class="hide">
+
+    <div class="letter-card">
+
+        <h1>💌</h1>
+
+        <h2>Selamat Ulang Tahun Sayangku 🤍</h2>
+
+        <p>
+            Selamat ulang tahun untuk perempuan
+            yang selalu berhasil membuat hariku menjadi lebih indah.
+
+            Terima kasih karena sudah hadir dalam hidupku.
+
+            Terima kasih karena selalu menjadi tempat
+            aku pulang.
+
+            Semoga di umurmu yang baru,
+            semua impianmu tercapai.
+
+            Semoga kamu selalu sehat.
+
+            Selalu bahagia.
+
+            Selalu dikelilingi orang baik.
+
+            Dan semoga aku masih diberikan kesempatan
+            untuk menemani setiap perjalananmu.
+
+            Aku mungkin belum menjadi laki-laki
+            yang sempurna.
+
+            Tapi aku akan selalu berusaha menjadi
+            yang terbaik untukmu.
+
+            Terima kasih sudah mencintaiku.
+
+            Terima kasih sudah bertahan.
+
+            Aku mencintaimu lebih dari yang bisa
+            aku ungkapkan lewat kata-kata.
+
+            Happy Birthday Princess 🤍
+        </p>
+
+        <button id="nextGallery">
+            Lihat Kenangan 📸
+        </button>
+
+    </div>
+
+</section>
+
+
+<section id="gallerypage" class="hide">
+
+    <video class="memory-video" autoplay muted loop playsinline>
+        <source src="assets/video/memory.mp4" type="video/mp4">
+    </video>
+
+    <div class="video-overlay"></div>
+
+    <img src="assets/images/tulip.png" class="tulip-left">
+    <img src="assets/images/tulip2.png" class="tulip-right">
+
+    <img src="assets/images/duck1.png" class="gallery-duck">
+
+    <div class="gallery-content">
+
+        <h1>Our Memories 🤍</h1>
+
+        <p>
+            Setiap foto di bawah ini adalah bagian dari cerita kita.
+            Terima kasih sudah menciptakan begitu banyak kenangan indah bersamaku.
+        </p>
+
+        <div class="gallery-grid">
+            <div class="photo"><img src="assets/gallery/foto1.jpg" alt="Foto 1"></div>
+            <div class="photo"><img src="assets/gallery/foto2.jpg" alt="Foto 2"></div>
+            <div class="photo"><img src="assets/gallery/foto3.jpg" alt="Foto 3"></div>
+            <div class="photo"><img src="assets/gallery/foto4.jpg" alt="Foto 4"></div>
+            <div class="photo"><img src="assets/gallery/foto5.jpg" alt="Foto 5"></div>
+            <div class="photo"><img src="assets/gallery/foto6.jpg" alt="Foto 6"></div>
+            <div class="photo"><img src="assets/gallery/foto7.jpg" alt="Foto 7"></div>
+            <div class="photo"><img src="assets/gallery/foto8.jpg" alt="Foto 8"></div>
+            <div class="photo"><img src="assets/gallery/foto9.jpg" alt="Foto 9"></div>
+            <div class="photo"><img src="assets/gallery/foto10.jpg" alt="Foto 10"></div>
+            <div class="photo"><img src="assets/gallery/foto11.jpg" alt="Foto 11"></div>
+            <div class="photo"><img src="assets/gallery/foto12.jpg" alt="Foto 12"></div>
+            <div class="photo"><img src="assets/gallery/foto13.jpg" alt="Foto 13"></div>
+            <div class="photo"><img src="assets/gallery/foto14.jpg" alt="Foto 14"></div>
+            <div class="photo"><img src="assets/gallery/foto15.jpg" alt="Foto 15"></div>
+            <div class="photo"><img src="assets/gallery/foto16.jpg" alt="Foto 16"></div>
+            <div class="photo"><img src="assets/gallery/foto17.jpg" alt="Foto 17"></div>
+            <div class="photo"><img src="assets/gallery/foto18.jpg" alt="Foto 18"></div>
+            <div class="photo"><img src="assets/gallery/foto19.jpg" alt="Foto 19"></div>
+            <div class="photo"><img src="assets/gallery/foto20.jpg" alt="Foto 20"></div>
+        </div>
+
+        <button id="timelineButton">
+            Lanjut 🤍
+        </button>
+
+    </div>
+
+</section>
+
+
+<div id="photoModal" class="photo-modal">
+    <span id="closePhoto">&times;</span>
+    <img id="modalImage" alt="Preview Foto">
+</div>
+
+
+<section id="wish" class="hide">
+
+    <div class="flower-left">
+        <img src="assets/images/tulip.png">
+    </div>
+
+    <div class="flower-right">
+        <img src="assets/images/tulip.png">
+    </div>
+    
+    <h2>Aku Punya Harapan...</h2>
+
+    <p>
+        Semoga setiap ulang tahunmu nanti,
+        aku masih menjadi orang pertama
+        yang mengucapkan selamat.
+
+        Semoga kita selalu diberikan
+        kesehatan.
+
+        Diberikan rezeki.
+
+        Diberikan umur panjang.
+
+        Ternyata semesta mempersatukan kita lagi, 
+        semoga bukan untuk mengulang luka yang sama,
+        melainkan untuk menyelesaikan kisah yang dulu hanya sebatas mengagumi
+        🤍
+    </p>
+
+    <button id="lastPage">
+        Terakhir...
+    </button>
+
+</section>
+
+
+<section id="question" class="hide">
+
+    <div class="question-box">
+
+        <div class="question-decoration">
+            <img src="assets/images/duck2.png">
+            <img src="assets/images/tulip.png">
+        </div>
+
+        <h2>My I Be Your BoyFriend ?</h2>
+
+        <div class="buttons">
+            <button id="yes">IYA ❤️</button>
+            <button id="no">Tidak</button>
+        </div>
+
+    </div>
+
+</section>
+
+
+<section id="success" class="hide">
+
+    <h1>Aku Sayang Kamu 🤍</h1>
+
+    <h2>Happy Birthday Princess 🤍</h2>
+
+    <p>
+        "Jika kamu adalah tujuan yang ditulis semesta di ujung perjalanan,
+         maka aku akan menempuh setiap jalan untuk sampai kepadamu.
+         Sebab mencintaimu bukan hanya tentang mengagumimu dari kejauhan, 
+         melainkan tentang tetap melangkah meski kaki ini berkali-kali terluka.
+         Ada orang yang dicintai dengan kata-kata, dan ada orang yang dicintai dengan perjuangan.
+         Kamu memiliki keduanya aku mencintaimu di perkataanku dan di segala usahaku. Maka selama semesta masih memberiku kesempatan, aku akan terus mengusahakanmu."
+        
+        Terima kasih sudah membuka hadiah kecil ini.
+        Semoga kamu selalu bahagia.
+        Aku akan selalu memilihmu.
+        Hari ini. Besok. Lusa. Dan seterusnya.
+        🤍
+    </p>
+
+    <div class="duck-group">
+        <img src="assets/images/duck1.png">
+        <img src="assets/images/duck2.png">
+        <img src="assets/images/duck2.png">
+        <img src="assets/images/duck2.png">
+        <img src="assets/images/duck1.png">
+    </div>
+
+</section>
+
+
+<audio id="music" loop>
+    <source src="assets/music.mp3" type="audio/mp3">
+</audio>
+
+
+<canvas id="confetti"></canvas>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
